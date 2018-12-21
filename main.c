@@ -43,8 +43,9 @@ int main(){
         sscanf(temp, "%u.%u.%u.%u:%u", &a, &b, &c, &d, &e);
         unsigned long long int ip = a*(256*256*256)+b*(256*256)+c*(256)+d;
         char t[20]={};
-        sprintf(t,"%lld:%lld_",ip,e);
-        printf("%s\n",t);
+        sprintf(t,"%lld:%u_",ip,e);
+        strcat(stringToSend,t);
+        //printf("%s\n",t);
         j=0;
       }
     }
@@ -53,4 +54,5 @@ int main(){
   }
     //write(fd,stringToSend,strlen(stringToSend));
     printf("%ld",strlen(stringToSend));
+    //printf("%s",stringToSend);
 }
